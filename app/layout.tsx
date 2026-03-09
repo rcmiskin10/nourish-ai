@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'NourishAI - Turn your fridge into personalized, allergy-safe meals in seconds',
-  description: 'AI-powered meal planning app that generates personalized recipes from your available ingredients and dietary restrictions.',
+  title: 'NourishAI - AI-powered meal plans from what\'s already in your fridge',
+  description: 'NourishAI generates personalized meal plans and recipes based on dietary restrictions, available ingredients, and nutritional goals.',
 };
 
 export default function RootLayout({

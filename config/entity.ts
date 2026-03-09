@@ -64,7 +64,7 @@ export const entityConfig: EntityConfig = {
       label: 'Dietary Restrictions',
       type: 'multi-select',
       required: false,
-      options: ['keto', 'vegan', 'gluten_free', 'dairy_free', 'nut_allergy', 'soy_allergy'],
+      options: ['keto', 'vegan', 'gluten_free', 'dairy_free', 'nut_allergy', 'soy_allergy', 'vegetarian'],
       showInList: true,
       showInForm: true,
     },
@@ -73,7 +73,7 @@ export const entityConfig: EntityConfig = {
       label: 'Nutritional Goals',
       type: 'multi-select',
       required: false,
-      options: ['weight_loss', 'muscle_gain', 'maintenance', 'heart_health'],
+      options: ['weight_loss', 'muscle_gain', 'maintenance', 'heart_health', 'energy_boost'],
       showInList: true,
       showInForm: true,
     },
@@ -104,11 +104,11 @@ export const entityConfig: EntityConfig = {
       showInForm: true,
     },
     {
-      name: 'recipes',
-      label: 'Generated Recipes',
+      name: 'plan_details',
+      label: 'Plan Details',
       type: 'rich-text',
       required: false,
-      placeholder: 'AI-generated recipes will appear here...',
+      placeholder: 'AI-generated meal plan details, recipes, and notes...',
       showInList: false,
       showInForm: true,
     },
@@ -121,15 +121,6 @@ export const entityConfig: EntityConfig = {
       defaultValue: 'draft',
       showInList: false,
       showInForm: true,
-    },
-    {
-      name: 'is_favorite',
-      label: 'Favorite',
-      type: 'boolean',
-      required: false,
-      defaultValue: 'false',
-      showInList: false,
-      showInForm: true,
     }
   ],
 
@@ -140,7 +131,7 @@ export const entityConfig: EntityConfig = {
   allowCreate: true,
   allowEdit: true,
   allowDelete: true,
-  allowExport: true,
+  allowExport: false,
 }
 
 export function getListFields(): EntityField[] {

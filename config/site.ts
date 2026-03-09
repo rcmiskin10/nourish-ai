@@ -1,4 +1,4 @@
-import { Refrigerator, ShieldCheck, Brain, BarChart3, Users, Leaf } from 'lucide-react'
+import { Refrigerator, ShieldCheck, Brain, BarChart3, CalendarDays, ShoppingCart } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface NavItem {
@@ -56,8 +56,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'NourishAI',
-  tagline: 'Turn your fridge into personalized, allergy-safe meals in seconds',
-  description: 'AI-powered meal planning app that generates personalized recipes from your available ingredients and dietary restrictions.',
+  tagline: 'AI-powered meal plans from what\'s already in your fridge',
+  description: 'NourishAI generates personalized meal plans and recipes based on dietary restrictions, available ingredients, and nutritional goals.',
   url: process.env.NEXT_PUBLIC_APP_URL
     || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
     || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
@@ -67,63 +67,60 @@ export const siteConfig: SiteConfig = {
   mainNav: [
     { title: 'Features', href: '/features' },
     { title: 'Pricing', href: '/pricing' },
-    { title: 'How It Works', href: '/features#how-it-works' },
-    { title: 'FAQ', href: '/pricing#faq' }
+    { title: 'FAQ', href: '/#faq' }
   ],
 
   dashboardNav: [
     { title: 'Dashboard', href: '/dashboard' },
-    { title: 'Meal Plans', href: '/dashboard/entities' },
-    { title: 'My Pantry', href: '/dashboard/pantry' },
-    { title: 'Dietary Profiles', href: '/dashboard/profiles' },
-    { title: 'Grocery List', href: '/dashboard/grocery-list' }
+    { title: 'Meal Plans', href: '/dashboard/meal_plans' },
+    { title: 'Settings', href: '/dashboard/settings' }
   ],
 
   hero: {
-    badge: 'AI-Powered Meal Planning',
-    headline: 'Turn Your Fridge Into Delicious,',
-    headlineHighlight: 'Allergy-Safe Meals Instantly',
-    subheadline: 'Tell NourishAI what\'s in your kitchen and your dietary needs — keto, vegan, gluten-free, nut allergy, or any combination — and get personalized, nutritionally balanced recipes in seconds. No more food waste, no more guesswork, no more anxiety about hidden allergens.',
-    primaryCta: { text: 'Start Cooking Free', href: '/register' },
+    badge: 'AI-Powered Nutrition',
+    headline: 'Turn Your Fridge Into',
+    headlineHighlight: 'Personalized Meal Plans',
+    subheadline: 'Tell NourishAI what\'s in your kitchen and your dietary needs — get instant, nutritionally accurate recipes that respect every restriction, allergy, and health goal. No more wasted food, no more guesswork.',
+    primaryCta: { text: 'Get Started Free', href: '/register' },
     secondaryCta: { text: 'See How It Works', href: '/features' },
-    socialProof: { text: 'Loved by 2,000+ health-conscious home cooks', rating: '4.9/5' },
+    socialProof: { text: 'Loved by 5,000+ home cooks with dietary restrictions', rating: '4.8/5' },
   },
 
   features: [
     {
       icon: Refrigerator,
       title: 'Fridge-to-Plate AI',
-      description: 'Input what you have on hand and get instant, complete recipes that maximize your available ingredients and minimize food waste.',
+      description: 'Input the ingredients you already have and get perfectly matched recipes in seconds — reducing food waste and saving money.',
       gradient: 'from-emerald-500 to-teal-500',
     },
     {
       icon: ShieldCheck,
-      title: 'Deep Allergy Intelligence',
-      description: 'Goes beyond simple filters — our allergy engine understands cross-reactivity, hidden allergens in processed foods, and severity levels to keep you safe.',
+      title: 'Complex Allergy Stacking',
+      description: 'Stack unlimited dietary restrictions and allergies with confidence scoring so you know every recipe is safe for your unique needs.',
       gradient: 'from-rose-500 to-pink-500',
     },
     {
       icon: Brain,
-      title: 'AI-Powered Personalization',
-      description: 'The more you use NourishAI, the better it knows your taste. Our adaptive AI learns from your feedback to suggest meals you\'ll actually love.',
+      title: 'Adaptive Taste Learning',
+      description: 'Rate recipes and NourishAI learns your preferences over time, delivering increasingly personalized suggestions you\'ll actually love.',
       gradient: 'from-violet-500 to-purple-500',
     },
     {
       icon: BarChart3,
-      title: 'Complete Nutritional Breakdowns',
-      description: 'Every recipe comes with detailed calorie, macro, and micronutrient data aligned to your specific health and fitness goals.',
+      title: 'Detailed Nutritional Breakdowns',
+      description: 'Every recipe includes verified calorie, macro, and micronutrient data sourced from USDA databases — no guesswork, no hidden info.',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: Users,
-      title: 'Multi-Profile Household Planning',
-      description: 'One family member is keto, another is vegan? Create unified meal plans that accommodate everyone\'s restrictions with smart substitutions.',
+      icon: CalendarDays,
+      title: 'Smart Meal Planning',
+      description: 'Generate daily or weekly meal plans optimized for your nutritional goals, available ingredients, and taste preferences.',
       gradient: 'from-amber-500 to-orange-500',
     },
     {
-      icon: Leaf,
-      title: 'Waste Reduction Tracking',
-      description: 'Prioritizes soon-to-expire ingredients, tracks your usage patterns, and gives you a monthly food waste reduction score to help the planet.',
+      icon: ShoppingCart,
+      title: 'Intelligent Grocery Lists',
+      description: 'Auto-generate grocery lists that account for what you already own — buy only what you need and eliminate over-purchasing.',
       gradient: 'from-green-500 to-emerald-500',
     }
   ],
@@ -142,8 +139,7 @@ export const siteConfig: SiteConfig = {
       links: [
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
-        { title: 'How It Works', href: '/features#how-it-works' },
-        { title: 'Recipes', href: '/recipes' }
+        { title: 'FAQ', href: '/#faq' }
       ],
     },
     {
@@ -151,7 +147,6 @@ export const siteConfig: SiteConfig = {
       links: [
         { title: 'About', href: '/about' },
         { title: 'Blog', href: '/blog' },
-        { title: 'Careers', href: '/careers' },
         { title: 'Contact', href: '/contact' }
       ],
     },
@@ -160,8 +155,7 @@ export const siteConfig: SiteConfig = {
       links: [
         { title: 'Privacy Policy', href: '/privacy' },
         { title: 'Terms of Service', href: '/terms' },
-        { title: 'Allergen Disclaimer', href: '/allergen-disclaimer' },
-        { title: 'Cookie Policy', href: '/cookies' }
+        { title: 'Allergen Disclaimer', href: '/disclaimer' }
       ],
     }
   ],

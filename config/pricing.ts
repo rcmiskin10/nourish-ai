@@ -24,76 +24,77 @@ export const pricingConfig: {
   model: 'freemium',
 
   defaultLimits: {
-    entities: 3,
-    recipes_per_day: 5,
-    dietary_profiles: 1
+    meal_plans: 5,
+    recipes_per_day: 3,
+    saved_recipes: 10
   },
 
   plans: [
     {
       id: 'free',
       name: 'Free',
-      description: 'Explore AI-powered recipe generation with basic features',
+      description: 'Discover AI-powered meal planning with essential features',
       price: { monthly: 0 },
       limits: {
-        entities: 3,
-        recipes_per_day: 5,
-        dietary_profiles: 1
+        meal_plans: 5,
+        recipes_per_day: 3,
+        saved_recipes: 10
       },
       features: [
-        'Up to 5 AI recipes per day',
-        '1 dietary restriction profile',
-        'Basic nutritional info (calories & macros)',
-        'Ingredient-based recipe search',
-        '3 saved meal plans',
-        'Community recipe library access'
+        'Up to 3 AI recipe suggestions per day',
+        'Single-day meal plan generation',
+        '1 diet type + up to 3 allergens',
+        'Nutritional breakdown (calories, protein, carbs, fat)',
+        'Save up to 10 favorite recipes',
+        'Up to 5 meal plans'
       ],
       cta: 'Get Started Free',
     },
     {
       id: 'plus',
-      name: 'NourishAI Plus',
-      description: 'Unlimited meal planning with full nutritional intelligence',
-      price: { monthly: 6.99, yearly: 49.99 },
+      name: 'Plus',
+      description: 'Unlimited AI meal planning with advanced personalization',
+      price: { monthly: 7.99, yearly: 59.99 },
       priceId: process.env.STRIPE_PRICE_PLUS,
       limits: {
-        entities: -1,
+        meal_plans: -1,
         recipes_per_day: -1,
-        dietary_profiles: 3
+        saved_recipes: -1
       },
       features: [
-        'Unlimited AI-generated recipes & meal plans',
-        'Full nutritional breakdowns (micros, vitamins, minerals)',
-        'Up to 3 dietary restriction profiles',
-        'Smart grocery list generation',
-        'Adaptive taste preference learning',
-        'Food waste reduction suggestions',
-        'Ad-free experience',
-        'Priority recipe generation'
+        'Unlimited AI recipe suggestions',
+        'Weekly & monthly meal plan generation',
+        'Unlimited dietary restrictions & allergy stacking',
+        'Smart grocery lists (accounts for pantry items)',
+        'Detailed micronutrient tracking',
+        'Adaptive taste learning AI',
+        'Recipe scaling for any serving size',
+        'Unlimited saved recipes & plan history',
+        'Food waste tracker with savings estimates'
       ],
       highlighted: true,
-      cta: 'Start 14-Day Free Trial',
+      cta: 'Start Free Trial',
     },
     {
       id: 'family',
-      name: 'NourishAI Family',
-      description: 'Unified meal planning for households with mixed dietary needs',
-      price: { monthly: 11.99, yearly: 89.99 },
+      name: 'Family',
+      description: 'Unified meal planning for the whole household',
+      price: { monthly: 12.99, yearly: 99.99 },
       priceId: process.env.STRIPE_PRICE_FAMILY,
       limits: {
-        entities: -1,
+        meal_plans: -1,
         recipes_per_day: -1,
-        dietary_profiles: 6
+        saved_recipes: -1
       },
       features: [
         'Everything in Plus',
         'Up to 6 household member profiles',
-        'Unified meal planning with per-person substitutions',
-        'Grocery delivery integration (Instacart, Amazon Fresh)',
-        'Batch cooking & meal prep optimization',
-        'Priority access to new features',
-        'Family sharing & collaboration',
-        'Dedicated family dashboard'
+        'Individual dietary profiles per member',
+        'Unified family meal plans with per-person modifications',
+        'Shared grocery lists with household collaboration',
+        'Kid-friendly recipe mode',
+        'Budget optimization for family meals',
+        'Priority support'
       ],
       cta: 'Start Family Trial',
     }
