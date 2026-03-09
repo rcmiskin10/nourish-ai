@@ -38,7 +38,7 @@ export const featuresConfig: FeaturesConfig = {
   fileUploads: false,
   notifications: true,
   entityCrud: true,
-  entityExport: false,
+  entityExport: true,
   entitySearch: true
 }
 
