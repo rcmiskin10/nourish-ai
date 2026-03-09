@@ -12,12 +12,12 @@ CREATE TABLE public.entities (
   plan_name TEXT NOT NULL,
   dietary_restrictions TEXT[],
   nutritional_goals TEXT[],
+  generation_date DATE NOT NULL,
   available_ingredients TEXT[],
-  generated_recipes TEXT,
-  creation_date DATE NOT NULL,
-  calorie_target INTEGER,
-  allergy_severity TEXT DEFAULT 'preference',
-  is_active BOOLEAN DEFAULT FALSE,
+  total_calories INTEGER,
+  recipes TEXT,
+  status TEXT NOT NULL DEFAULT 'draft',
+  is_favorite BOOLEAN DEFAULT FALSE,
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -26,7 +26,7 @@ CREATE TABLE public.entities (
 
 -- Indexes
 CREATE INDEX idx_entities_user_id ON public.entities(user_id);
-
+CREATE INDEX idx_entities_status ON public.entities(status);
 CREATE INDEX idx_entities_created_at ON public.entities(created_at DESC);
 
 -- Auto-update updated_at trigger
