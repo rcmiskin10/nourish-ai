@@ -15,9 +15,8 @@ CREATE TABLE public.entities (
   generation_date DATE NOT NULL,
   available_ingredients TEXT[],
   total_calories INTEGER,
-  recipes TEXT,
+  plan_details TEXT,
   status TEXT NOT NULL DEFAULT 'draft',
-  is_favorite BOOLEAN DEFAULT FALSE,
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
